@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/flems/typescript-developer-project-81/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/flems/typescript-developer-project-81/actions)",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

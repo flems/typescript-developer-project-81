@@ -1,12 +1,25 @@
-language: typescript
+language: node_js
 node_js:
-  - "stable"
-notifications:
-  email: false
+  - "16"
+
+sudo: true
 
 cache:
   directories:
   - node_modules
 
+# Определение скриптов перед запуском тестов
+before_script:
+  - npm install -g typescript
+  - npm install
+
+# Скрипты для запуска тестов и сборки проекта
 script:
-  npm run start
+  - npm run build # Здесь предполагается, что у вас есть скрипт "build" для компиляции TypeScript
+  # - npm test # Запуск скрипта для тестирования
+
+# Настройка для уведомлений о статусе сборки
+# notifications:
+#   email:
+#     on_success: never
+#     on_failure: never
