@@ -1,0 +1,12 @@
+language: typescript
+node_js:
+  - "stable"
+notifications:
+  email: false
+
+cache:
+  directories:
+  - node_modules
+
+script:
+  npm run start
