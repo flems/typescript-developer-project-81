@@ -22,5 +22,5 @@ jobs:
     - name: Run linter
       run: npm run lint # Здесь запуск команды для запуска линтера
 
-    - name: Run tests
-      run: npm test # Здесь запуск команды для запуска тестов
+    - name: Run tests with coverage
+      run: npm test -- --coverage
