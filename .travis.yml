@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=13e761ccbbd24ad3356e067930e17bf67a910a2165507bfce1970c061b02f2b4
 language: node_js
 node_js:
   - "16"
@@ -13,11 +16,21 @@ before_script:
   - npm install -g typescript
   - npm install
 
+  # climatecode
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 # Скрипты для запуска тестов и сборки проекта
 script:
   - npm run build # Здесь предполагается, что у вас есть скрипт "build" для компиляции TypeScript
-  - npm run test
   # - npm test # Запуск скрипта для тестирования
+  
+  # climatecode
+  - npm run test-coverage
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 # Настройка для уведомлений о статусе сборки
 # notifications:

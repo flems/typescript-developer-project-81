@@ -7,6 +7,7 @@
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "test": "vitest",
+    "test-coverage": "npx vitest run --coverage",
     "lint": "npx eslint ."
   },
   "repository": {
