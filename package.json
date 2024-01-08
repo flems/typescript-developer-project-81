@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "lint": "npx eslint ."
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,19 @@
     "url": "https://github.com/flems/typescript-developer-project-81/issues"
   },
   "homepage": "https://github.com/flems/typescript-developer-project-81#readme",
+  "devDependencies": {
+    "@types/eslint": "^8.56.1",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
+  },
   "dependencies": {
-    "typescript": "^5.3.3"
   }
 }

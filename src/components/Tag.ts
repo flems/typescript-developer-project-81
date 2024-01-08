@@ -1,29 +1,29 @@
-type TagOptions = Record<string, string>
+type TagOptions = Record<string, string>;
 
-export class Tag {
-    private readonly singleTags: string[] = ['input', 'img', 'br']
-    private isSingleTag: boolean
+export default class Tag {
+  private readonly singleTags: string[] = ['input', 'img', 'br'];
 
-    constructor (
-        protected tag: string,
-        protected options: TagOptions = {},
-        protected content: string = ''
-    ) {
-        this.isSingleTag = this.singleTags.includes(this.tag)
-    }
+  private isSingleTag: boolean;
 
-    public toString () {
-        const start = `<${this.tag}`
-        const end = this.isSingleTag ? ' />' : `</${this.tag}>`
-        const content = this.isSingleTag ? '' : this.content
-        let options = ''
+  constructor(
+    protected tag: string,
+    protected options: TagOptions = {},
+    protected content: string = '',
+  ) {
+    this.isSingleTag = this.singleTags.includes(this.tag);
+  }
 
-        for (const key in this.options) {
-            options += ` ${key}="${this.options[key]}"`
-        }
-        options += this.isSingleTag ? '' : `>`
+  public toString() : string {
+    const start = `<${this.tag}`;
+    const end = this.isSingleTag ? '>' : `</${this.tag}>`;
+    const content = this.isSingleTag ? '' : this.content;
+    let options = '';
 
-        return `${start}${options}${content}${end}`
-    }
+    Object.entries(this.options).forEach(([key, value]) => {
+      options += ` ${key}="${value}"`;
+    });
+    options += this.isSingleTag ? '' : '>';
+
+    return `${start}${options}${content}${end}`;
+  }
 }
-

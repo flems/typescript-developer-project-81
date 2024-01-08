@@ -1,0 +1,37 @@
+{
+  "br": {
+    "tag": "br",
+    "options": {},
+    "content": "",
+    "result": "<br>"
+  },
+  "span": {
+    "tag": "span",
+    "options": {},
+    "content": "Some text",
+    "result": "<span>Some text</span>"
+  },
+  "label": {
+    "tag": "label",
+    "options": {
+      "for": "email"
+    },
+    "content": "Email",
+    "result": "<label for=\"email\">Email</label>"
+  },
+  "div": {
+    "tag": "div",
+    "options": {},
+    "content": "",
+    "result": "<div></div>"
+  },
+  "submit input": {
+    "tag": "input",
+    "options": {
+      "type": "submit",
+      "value": "Save"
+    },
+    "content": "",
+    "result": "<input type=\"submit\" value=\"Save\">"
+  }
+}
