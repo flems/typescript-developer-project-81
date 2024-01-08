@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ] # или другие ваши ветки
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16' # Версия Node.js
+
+    - name: Install dependencies
+      run: npm install # или ваш менеджер пакетов (yarn, etc.)
+
+    - name: Run linter
+      run: npm run lint # Здесь запуск команды для запуска линтера
+
+    - name: Run tests
+      run: npm test # Здесь запуск команды для запуска тестов
